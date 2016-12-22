@@ -8,13 +8,23 @@ package com.jp.designpattern.creational.singleton;
  *
  */
 public class Singleton {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	String value;
+	private static Singleton s;
+	private Singleton(){
+	}
+	
+	public static Singleton getSingleton(){
+		if(s==null){
+			s=new Singleton();
+		}
+		return s;
+	}
+	
+	public String getValue() {
+		return value;
 	}
 
+	public void setValue(String value) {
+		this.value = value;
+	}
 }
